@@ -11,8 +11,7 @@ bot = commands.Bot(command_prefix= '.') #our bot
 #the bot does certain actions when event occurs
 async def on_ready():
     testing_channel = bot.get_channel(777020572008841216)
-    await testing_channel.send('Hi!') 
-    await testing_channel.send('Would you like to study with me?')  
+    await testing_channel.send('Hi! Would you like to study with me?')  
 
 @bot.event
 async def on_message(message):
@@ -28,4 +27,4 @@ async def on_message(message):
         await testing_channel.send(random.choice(motiv_message))
 
 #run the client on the server
-bot.run('Nzc3MjQ3MDEwOTIyNDMwNDg1.X7Aprw.DlA8zn2LBdNA_AV_C-yU_izGuaY')
+bot.run('Nzc3MjQ3MDEwOTIyNDMwNDg1.X7Aprw.tUETzmDjGPoTyo2e3tMOkbCsBe8')
