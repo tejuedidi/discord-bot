@@ -12,18 +12,24 @@ token = open("token.txt", "r").read()
 #the bot does certain actions when event occurs
 async def on_ready():
     print('Bot is online')
+    testing_channel = bot.get_channel(777020572008841216)
+    await testing_channel.send('Hello there :)')
 
 @bot.event
 async def on_message(message):
     testing_channel = bot.get_channel(777020572008841216)
-    if message.content == 'I can\'t focus':
-        await testing_channel.send('That\'s okay. Take a 15 minute break and try again.')
-    elif message.content == 'I\'m feeling unmotivated':
-        motiv_message = ['Once you\'re done with work, you can just relax!',
-                        'Work for ten more minutes, then take a short break. You\'d have earned it!',
-                        'C\'mon. Just one more assignment, then you\'ll be free!',
-                        'You\'ve got this. Persevere, and you\'ll be more thankful for yourself because of it!',
-                        'You\'re so close to being done! Just one more assignment!']
+    if message.content == 'I can\'t focus': 
+        await testing_channel.send('That\'s okay. Take a 7 minute break and try again.')
+    elif message.content == 'I am ready to finish some work!': 
+        await testing_channel.send('Awesome! Hone in that energy till the end.')
+    elif message.content == 'I am tired but I have so much work':
+        a_message = ['C\'mon. Just one more assignment, then you\'ll be free!',
+                     'You\'re so close to being done! Let\'s finish strong!',]
+        await testing_channel.send(random.choice(a_message))
+    elif message.content == 'I don\'t feel like doing work':
+        motiv_message = ['Once you finish you\'re work you can relax!',
+                        'Work in small intervals at a time. How about we try to stay focused for 15 minutes? Then take a short break, you earned it!',
+                        'You\'ve got this. Persevere, and you\'ll be more thankful for yourself because of it!',]
         await testing_channel.send(random.choice(motiv_message))
     elif message.content == '~study help':
         embedVar = discord.Embed(title = "Study links", description = " ", color = 0x4D71A5)
