@@ -2,37 +2,30 @@
 import discord
 import asyncio
 import datetime
-from discord.ext import commands, timers
+import random
+from discord.ext import commands
 
 bot = commands.Bot(command_prefix= '.') #our bot
-bot.timer_manager = timers.TimerManager(bot)
 
 @bot.event 
-#the bot does certian actions when event occurs
+#the bot does certain actions when event occurs
 async def on_ready():
-    general_channel = bot.get_channel(777078774659022862)
-    await general_channel.send('Hi!') 
-    await general_channel.send('Would you like to study with me?')  
+    testing_channel = bot.get_channel(777020572008841216) # 777078774659022862 for Teju's gen chat
+    await testing_channel.send('Hi!') 
+    await testing_channel.send('Would you like to study with me?')  
 
 @bot.event
 async def on_message(message):
-    if message.content == 'I cannot focus':
-        general_channel = bot.get_channel(777078774659022862)
-        await general_channel.send('That is ok. Take a 15 minute break and try again.')
-
-@bot.command(name="timer")
-async def timer(ctx, time, *, text):
-    date = datetime.datetime(*map(int, time.split("/")))
-    bot.timer_manager.create_timer("timer", date, args=(ctx.channel.id, ctx.author.id, text))
-    # or without the manager
-    timers.Timer(bot, "timer", date, args=(ctx.channel.id, ctx.author.id, text)).start()
-
-@bot.event
-async def on_reminder(channel_id, author_id, text):
-    general_channel = bot.get_channel(777078774659022862)
-
-    await general_channel.send("Hey, <@{0}>, remember to: {1}".format(author_id, text))
-
+    if message.content == 'I can\'t focus':
+        testing_channel = bot.get_channel(777020572008841216)
+        await testing_channel.send('That\'s okay. Take a 15 minute break and try again.')
+    elif message.content == 'I\'m feeling unmotivated':
+        motiv_message = ['Once you\'re done with work, you can just relax!',
+                         'Work for ten more minutes, then take a short break. You\'d have earned it!',
+                         'C\'mon. Just one more assignment, then you\'ll be free!',
+                         'You\'ve got this. Persevere, and you\'ll be more thankful for yourself because of it!',
+                         'You\'re so close to being done! Just one more assignment!']
+        await testing_channel.send(random.choice(motiv_message))
 
 #run the client on the server
-bot.run('Nzc3MDU1NDAyODIyMzM2NTQ0.X693PQ.qoHRcy1DxiFx4Y1CqF8eZHDRPvQ')
+bot.run('Nzc3MjQ3MDEwOTIyNDMwNDg1.X7Aprw.giFOBI9z4LmsXIXi82Nwnmy2YMo')
