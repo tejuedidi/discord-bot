@@ -43,19 +43,19 @@ async def on_message(message):
         await message.channel.send(embed = embedVar)
     elif message.content =='~distract':
         distract_pic = [
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\doggo-1.png'),
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\doggo-2.png'),
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\doggo-3.jpg'),
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\catto-1.jpg'),
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\catto-2.jpg'),
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\ham-1.jpg'),
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\hedge.png'),
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\ham-1.jpg'),]
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\doggo-1.png'),
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\doggo-2.png'),
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\doggo-3.jpg'),
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\catto-1.jpg'),
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\catto-2.jpg'),
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\ham-1.jpg'),
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\hedge.png'),
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\ham-1.jpg'),]
         await testing_channel.send(file=choice(distract_pic))
     elif message.content =='~studyMeme':
         meme_pic = [
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\meme-1.jpeg'),
-            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\images\meme-2.png'),]
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\meme-1.jpeg'),
+            discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\meme-2.png'),]
         await testing_channel.send(file=choice(meme_pic))
 
 bot.run(token)
