@@ -63,9 +63,9 @@ async def on_message(message):
         embedVar2.add_field(name = "Displays brief distractions", value = "`~distract`", inline = False)
         embedVar2.add_field(name = "Memes. Need I say more?", value = "`~study meme`", inline = False)
         embedVar2.add_field(name = "Break reminders", value = "`I can\'t focus`", inline = False)
-        embedVar2.add_field(name = "Encouragement to move forward", value = "`'I am tired but I have so much work'`", inline = False)
-        embedVar2.add_field(name = "An uplifting message", value = "`'I don\'t feel like doing work'`", inline = False)
-        embedVar2.add_field(name = "Continued motivation", value = "`'I am ready to finish some work!'`", inline = False)
+        embedVar2.add_field(name = "Encouragement to move forward", value = "`I am tired but I have so much work`", inline = False)
+        embedVar2.add_field(name = "An uplifting message", value = "`I don\'t feel like doing work`", inline = False)
+        embedVar2.add_field(name = "Continued motivation", value = "`I am ready to finish some work!`", inline = False)
         await message.channel.send(embed = embedVar2)
 
 bot.run(token)
