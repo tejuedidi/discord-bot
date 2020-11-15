@@ -10,14 +10,14 @@ bot = commands.Bot(command_prefix= '.') #our bot
 @bot.event 
 #the bot does certain actions when event occurs
 async def on_ready():
-    testing_channel = bot.get_channel(777020572008841216) # 777078774659022862 for Teju's gen chat
+    testing_channel = bot.get_channel(777020572008841216)
     await testing_channel.send('Hi!') 
     await testing_channel.send('Would you like to study with me?')  
 
 @bot.event
 async def on_message(message):
+    testing_channel = bot.get_channel(777020572008841216)
     if message.content == 'I can\'t focus':
-        testing_channel = bot.get_channel(777020572008841216)
         await testing_channel.send('That\'s okay. Take a 15 minute break and try again.')
     elif message.content == 'I\'m feeling unmotivated':
         motiv_message = ['Once you\'re done with work, you can just relax!',
@@ -28,4 +28,4 @@ async def on_message(message):
         await testing_channel.send(random.choice(motiv_message))
 
 #run the client on the server
-bot.run('Nzc3MjQ3MDEwOTIyNDMwNDg1.X7Aprw.giFOBI9z4LmsXIXi82Nwnmy2YMo')
+bot.run('Nzc3MjQ3MDEwOTIyNDMwNDg1.X7Aprw.DlA8zn2LBdNA_AV_C-yU_izGuaY')
