@@ -24,7 +24,7 @@ async def on_message(message):
                         'You\'ve got this. Persevere, and you\'ll be more thankful for yourself because of it!',
                         'You\'re so close to being done! Just one more assignment!']
         await testing_channel.send(random.choice(motiv_message))
-    elif message.content == '!study help':
+    elif message.content == '~study help':
         embedVar = discord.Embed(title = "Study links", description = " ", color = 0x4D71A5)
         embedVar.add_field(name=":test_tube:", value="[Science](https://www.khanacademy.org/science)", inline=False)
         embedVar.add_field(name=":computer:", value="[Computing](https://www.khanacademy.org/computing)", inline=False)
@@ -34,5 +34,21 @@ async def on_message(message):
         embedVar.add_field(name=":money_with_wings:", value="[Economics](https://www.khanacademy.org/economics-finance-domain)", inline=False)
         embedVar.add_field(name=":bulb:", value="[Life Skills](https://www.khanacademy.org/college-careers-more)", inline=False)
         await message.channel.send(embed = embedVar)
-
+    elif message.content =='~distract':
+        distract_pic = [
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\doggo-1.png'),
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\doggo-2.png'),
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\doggo-3.jpg'),
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\catto-1.jpg'),
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\catto-2.jpg'),
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\ham-1.jpg'),
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\hedge.png'),
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\ham-1.jpg'),]
+        await testing_channel.send(file=choice(distract_pic))
+    elif message.content =='~studyMeme':
+        meme_pic = [
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\meme-1.jpeg'),
+            discord.File(r'C:\Users\tejue\Desktop\NY\discord-bot\meme-2.png'),]
+        await testing_channel.send(file=choice(meme_pic))
+    
 bot.run(token)
