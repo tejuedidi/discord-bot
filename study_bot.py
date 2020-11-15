@@ -31,16 +31,16 @@ async def on_message(message):
                         'Work in small intervals at a time. How about we try to stay focused for 15 minutes? Then take a short break, you earned it!',
                         'You\'ve got this. Persevere, and you\'ll be more thankful for yourself because of it!',]
         await testing_channel.send(random.choice(motiv_message))
-    elif message.content == '~study help':
-        embedVar = discord.Embed(title = "Study links", description = " ", color = 0x4D71A5)
-        embedVar.add_field(name=":test_tube:", value="[Science](https://www.khanacademy.org/science)", inline=False)
-        embedVar.add_field(name=":computer:", value="[Computing](https://www.khanacademy.org/computing)", inline=False)
-        embedVar.add_field(name=":abacus:", value="[Math](https://www.khanacademy.org/math)", inline=False)
-        embedVar.add_field(name=":scales:", value="[Arts & Humanities](https://www.khanacademy.org/humanities)", inline=False)
-        embedVar.add_field(name=":bookmark:", value="[Reading & Language Arts](https://www.khanacademy.org/ela)", inline=False)
-        embedVar.add_field(name=":money_with_wings:", value="[Economics](https://www.khanacademy.org/economics-finance-domain)", inline=False)
-        embedVar.add_field(name=":bulb:", value="[Life Skills](https://www.khanacademy.org/college-careers-more)", inline=False)
-        await message.channel.send(embed = embedVar)
+    elif message.content == '~study':
+        embedVar1 = discord.Embed(title = "Study links", description = " ", color = 0x4D71A5)
+        embedVar1.add_field(name = "Science :test_tube:", value = "[Khan Academy](https://www.khanacademy.org/science)", inline = False)
+        embedVar1.add_field(name = "Computing :computer:", value = "[Khan Academy](https://www.khanacademy.org/computing)", inline = False)
+        embedVar1.add_field(name = "Math :abacus:", value = "[Khan Academy](https://www.khanacademy.org/math)", inline = False)
+        embedVar1.add_field(name = "Arts & Humanities :scales:", value = "[Khan Academy](https://www.khanacademy.org/humanities)", inline = False)
+        embedVar1.add_field(name = "Reading & Language Arts :bookmark:", value = "[Khan Academy](https://www.khanacademy.org/ela)", inline = False)
+        embedVar1.add_field(name = "Economics :money_with_wings:", value = "[Khan Academy](https://www.khanacademy.org/economics-finance-domain)", inline = False)
+        embedVar1.add_field(name = "Life Skills :bulb:", value = "[Khan Academy](https://www.khanacademy.org/college-careers-more)", inline = False)
+        await message.channel.send(embed = embedVar1)
     elif message.content =='~distract':
         distract_pic = [
             discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\doggo-1.png'),
@@ -52,10 +52,20 @@ async def on_message(message):
             discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\hedge.png'),
             discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\ham-1.jpg'),]
         await testing_channel.send(file=choice(distract_pic))
-    elif message.content =='~studyMeme':
+    elif message.content =='~study meme':
         meme_pic = [
             discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\meme-1.jpeg'),
             discord.File(r'C:\Users\tejue\Desktop\Creatica\discord-bot\images\meme-2.png'),]
         await testing_channel.send(file=choice(meme_pic))
+    elif message.content == '~help':
+        embedVar2 = discord.Embed(title = "StudyBuddy prompts", description = " ", color = 0x4D71A5)
+        embedVar2.add_field(name = "Helps with studying", value = "`~study`", inline = False)
+        embedVar2.add_field(name = "Displays brief distractions", value = "`~distract`", inline = False)
+        embedVar2.add_field(name = "Memes. Need I say more?", value = "`~study meme`", inline = False)
+        embedVar2.add_field(name = "Break reminders", value = "`I can\'t focus`", inline = False)
+        embedVar2.add_field(name = "Encouragement to move forward", value = "`'I am tired but I have so much work'`", inline = False)
+        embedVar2.add_field(name = "An uplifting message", value = "`'I don\'t feel like doing work'`", inline = False)
+        embedVar2.add_field(name = "Continued motivation", value = "`'I am ready to finish some work!'`", inline = False)
+        await message.channel.send(embed = embedVar2)
 
 bot.run(token)
